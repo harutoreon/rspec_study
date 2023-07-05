@@ -17,9 +17,9 @@ RSpec.describe 'fizz buzz spec' do
     expect(fizz_buzz(5)).to eq 'Buzz'
   end
   it 'Return Fizz when method argument is six' do
-    expect(fizz_buzz(5)).to eq 'Buzz'
+    expect(fizz_buzz(6)).to eq 'Fizz'
   end
   it 'Return Fizz Buzz when method argument is fifteen' do
-    expect(fizz_buzz(5)).to eq 'Buzz'
+    expect(fizz_buzz(15)).to eq 'Fizz Buzz'
   end
 end
