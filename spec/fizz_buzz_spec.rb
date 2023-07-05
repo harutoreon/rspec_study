@@ -1,14 +1,25 @@
-require 'minitest/autorun'
 require './lib/fizz_buzz'
 
-class FizzBuzzTest < Minitest::Test
-  def test_fizz_buzz
-    assert_equal '1', fizz_buzz(1)
-    assert_equal '2', fizz_buzz(2)
-    assert_equal 'Fizz', fizz_buzz(3)
-    assert_equal '4', fizz_buzz(4)
-    assert_equal 'Buzz', fizz_buzz(5)
-    assert_equal 'Fizz', fizz_buzz(6)
-    assert_equal 'Fizz Buzz', fizz_buzz(15)
+RSpec.describe 'fizz buzz spec' do
+  it 'Return one when method argument is one' do
+    expect(fizz_buzz(1)).to eq '1'
+  end
+  it 'Return two when method argument is two' do
+    expect(fizz_buzz(2)).to eq '2'
+  end
+  it 'Return Fizz when method argument is three' do
+    expect(fizz_buzz(3)).to eq 'Fizz'
+  end
+  it 'Return four when method argument is four' do
+    expect(fizz_buzz(4)).to eq '4'
+  end
+  it 'Return Buzz when method argument is five' do
+    expect(fizz_buzz(5)).to eq 'Buzz'
+  end
+  it 'Return Fizz when method argument is six' do
+    expect(fizz_buzz(5)).to eq 'Buzz'
+  end
+  it 'Return Fizz Buzz when method argument is fifteen' do
+    expect(fizz_buzz(5)).to eq 'Buzz'
   end
 end

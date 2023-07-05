@@ -1,3 +1,10 @@
-example_id                | status | run_time        |
-------------------------- | ------ | --------------- |
-./spec/hello_spec.rb[1:1] | passed | 0.00325 seconds |
+example_id                    | status | run_time        |
+----------------------------- | ------ | --------------- |
+./spec/fizz_buzz_spec.rb[1:1] | passed | 0.00008 seconds |
+./spec/fizz_buzz_spec.rb[1:2] | passed | 0.0001 seconds  |
+./spec/fizz_buzz_spec.rb[1:3] | passed | 0.00009 seconds |
+./spec/fizz_buzz_spec.rb[1:4] | passed | 0.00009 seconds |
+./spec/fizz_buzz_spec.rb[1:5] | passed | 0.00009 seconds |
+./spec/fizz_buzz_spec.rb[1:6] | passed | 0.00165 seconds |
+./spec/fizz_buzz_spec.rb[1:7] | passed | 0.00018 seconds |
+./spec/hello_spec.rb[1:1]     | passed | 0.00092 seconds |
