@@ -7,4 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
-          command: rake
+          command: bundle install
+      - run:
+          command: bundle exec rspec
