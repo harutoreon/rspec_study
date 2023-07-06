@@ -9,6 +9,4 @@ jobs:
       - run:
           command: bundle install
       - run:
-          command: bundle exec rspec
-      - run:
           command: rake
