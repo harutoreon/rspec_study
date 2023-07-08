@@ -1,13 +1,13 @@
 require './lib/convert_length'
 
-RSpec.xdescribe 'length convert spec' do
-  it 'does something' do
-    # assert_equal 39.37, convert_length(1, from: :m, to: :in)  
+RSpec.describe 'length convert spec' do
+  it 'returns 39.37' do
+    expect(convert_length(1, from: :m, to: :in)).to eq(39.37)
   end
-  it 'does something' do
-    # assert_equal 0.38, convert_length(15, from: :in, to: :m)
+  it 'returns 0.38' do
+    expect(convert_length(15, from: :in, to: :m)).to eq(0.38)
   end
-  it 'does something' do
-    # assert_equal 10670.73, convert_length(35000, from: :ft, to: :m)
+  it 'returns 10670.73' do
+    expect(convert_length(35000, from: :ft, to: :m)).to eq(10670.73)
   end
 end
