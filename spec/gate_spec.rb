@@ -2,37 +2,39 @@ require './lib/gate'
 require './lib/ticket'
 
 RSpec.describe 'ticket gate spec' do
-  before do
-    @umeda = Gate.new(:umeda)
-    @juso = Gate.new(:juso)
-    @mikuni = Gate.new(:mikuni)    
+  let(:umeda) { Gate.new(:umeda) }
+  let(:juso) { Gate.new(:juso) }
+  let(:mikuni) { Gate.new(:mikuni) }
+
+  context 'when fare is 150 yen' do
+    example 'enter from Umeda to exit Juso' do
+      ticket = Ticket.new(150)
+      umeda.enter(ticket)
+  
+      expect(juso.exit(ticket)).to eq true
+    end
+
+    example 'enter from Juso to exit Mikuni' do
+      ticket = Ticket.new(150)
+      juso.enter(ticket)
+  
+      expect(mikuni.exit(ticket)).to eq true
+    end
+    
+    example 'enter from Umeda to exit Mikuni' do
+      ticket = Ticket.new(150)
+      umeda.enter(ticket)
+  
+      expect(mikuni.exit(ticket)).to eq false
+    end
   end
 
-  example 'when get on at Umeda and get off at Juso' do
-    ticket = Ticket.new(150)
-    @umeda.enter(ticket)
-
-    expect(@juso.exit(ticket)).to eq true
-  end
-
-  example 'when get on at Umeda and get off at mikuni' do
-    ticket = Ticket.new(190)
-    @umeda.enter(ticket)
-
-    expect(@mikuni.exit(ticket)).to eq true
-  end
-
-  example 'when get on at Juso and get off at Mikuni' do
-    ticket = Ticket.new(150)
-    @juso.enter(ticket)
-
-    expect(@mikuni.exit(ticket)).to eq true
-  end
-
-  example 'Failure: when get on at Umeda and get off at mikuni' do
-    ticket = Ticket.new(150)
-    @umeda.enter(ticket)
-
-    expect(@mikuni.exit(ticket)).to eq false
+  context 'when fare is 190 yen' do
+    example 'enter from Umeda to exit Mikuni' do
+      ticket = Ticket.new(190)
+      umeda.enter(ticket)
+  
+      expect(mikuni.exit(ticket)).to eq true
+    end    
   end
 end
