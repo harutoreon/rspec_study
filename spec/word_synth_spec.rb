@@ -1,7 +1,7 @@
 require './lib/word_synth'
 require './lib/effects'
 
-RSpec.describe '::description' do
+RSpec.describe 'word synth spec' do
   context 'when play without effects' do
     it 'returns Ruby is fun!' do
       synth = WordSynth.new
@@ -17,7 +17,7 @@ RSpec.describe '::description' do
     end
   end
 
-  context 'play with many effects' do
+  context 'when play with many effects' do
     it 'returns !!!YYBBUURR !!!SSII !!!!!NNUUFF' do
       synth = WordSynth.new
       synth.add_effect(Effects.echo(2))
