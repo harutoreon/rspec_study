@@ -1,28 +1,24 @@
 require './lib/effects'
 
-RSpec.xdescribe '::description' do
-  
+RSpec.describe 'effects spec' do
+  example 'reverse method' do
+    effect = Effects.reverse
+    expect(effect.call('Ruby is fun!')).to eq 'ybuR si !nuf'
+  end
+
+  example 'echo method' do
+    effect = Effects.echo(2)
+    expect(effect.call('Ruby is fun!')).to eq 'RRuubbyy iiss ffuunn!!'
+
+    effect = Effects.echo(3)
+    expect(effect.call('Ruby is fun!')).to eq 'RRRuuubbbyyy iiisss fffuuunnn!!!'
+  end
+
+  example 'loud method' do
+    effect = Effects.loud(2)
+    expect(effect.call('Ruby is fun!')).to eq 'RUBY!! IS!! FUN!!!'
+
+    effect = Effects.loud(3)
+    expect(effect.call('Ruby is fun!')).to eq 'RUBY!!! IS!!! FUN!!!!'
+  end
 end
-
-# class EffectsTest < Minitest::Test
-#   def test_reverse
-#     effect = Effects.reverse
-#     assert_equal 'ybuR si !nuf', effect.call('Ruby is fun!')
-#   end
-
-#   def test_echo
-#     effect = Effects.echo(2)
-#     assert_equal 'RRuubbyy iiss ffuunn!!', effect.call('Ruby is fun!')
-
-#     effect = Effects.echo(3)
-#     assert_equal 'RRRuuubbbyyy iiisss fffuuunnn!!!', effect.call('Ruby is fun!')
-#   end
-
-#   def test_loud
-#     effect = Effects.loud(2)
-#     assert_equal 'RUBY!! IS!! FUN!!!', effect.call('Ruby is fun!')
-
-#     effect = Effects.loud(3)
-#     assert_equal 'RUBY!!! IS!!! FUN!!!!', effect.call('Ruby is fun!')    
-#   end
-# end
