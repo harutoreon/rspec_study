@@ -1,29 +1,22 @@
 require './lib/bank'
 require './lib/team'
 
-RSpec.xdescribe 'deep freezable spec' do
+RSpec.describe 'deep freezable spec' do
   it 'deep freeze to array' do
-    
+    expect(Team::COUNTRIES).to eq ['Japan', 'US', 'India']
+    expect(Team::COUNTRIES.frozen?).to eq true
+    expect(Team::COUNTRIES.all? { |country| country.frozen? }).to eq true
   end
 
   it 'deep freeze to hash' do
-    
+    expect(Bank::CURRENCIES).to eq ({
+      'Japan' => 'yen',
+      'US' => 'dollar',
+      'India' => 'rupee'
+    })
+    expect(Bank::CURRENCIES.frozen?).to eq true
+    expect(Bank::CURRENCIES.all? { |key, value|
+      key.frozen? && value.frozen?
+    }).to eq true
   end
 end
-
-# class DeepFreezableTest < Minitest::Test
-#   def test_deep_freeze_to_array
-#     assert_equal ['Japan', 'US', 'India'], Team::COUNTRIES
-#     assert Team::COUNTRIES.frozen?
-#     assert Team::COUNTRIES.all? { |country| country.frozen? }
-#   end
-
-#   def test_deep_freeze_to_hash
-#     assert_equal(
-#       { 'Japan' => 'yen', 'US' => 'dollar', 'India' => 'rupee' },
-#       Bank::CURRENCIES
-#     )
-#     assert Bank::CURRENCIES.frozen?
-#     assert Bank::CURRENCIES.all? { |key, value| key.frozen? && value.frozen? }
-#   end
-# end
