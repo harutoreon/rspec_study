@@ -11,21 +11,21 @@ RSpec.describe 'ticket gate spec' do
       ticket = Ticket.new(150)
       umeda.enter(ticket)
   
-      expect(juso.exit(ticket)).to eq true
+      expect(juso.exit(ticket)).to be_truthy
     end
 
     example 'enter from Juso to exit Mikuni' do
       ticket = Ticket.new(150)
       juso.enter(ticket)
   
-      expect(mikuni.exit(ticket)).to eq true
+      expect(mikuni.exit(ticket)).to be_truthy
     end
     
     example 'enter from Umeda to exit Mikuni' do
       ticket = Ticket.new(150)
       umeda.enter(ticket)
   
-      expect(mikuni.exit(ticket)).to eq false
+      expect(mikuni.exit(ticket)).to be_falsey
     end
   end
 
@@ -34,7 +34,7 @@ RSpec.describe 'ticket gate spec' do
       ticket = Ticket.new(190)
       umeda.enter(ticket)
   
-      expect(mikuni.exit(ticket)).to eq true
+      expect(mikuni.exit(ticket)).to be_truthy
     end    
   end
 end
