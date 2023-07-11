@@ -1,3 +1,4 @@
+require './spec/spec_helper'
 require './lib/rgb'
 
 RSpec.describe 'RGB convert' do

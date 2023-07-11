@@ -1,3 +1,4 @@
+require './spec/spec_helper'
 require './lib/convert_hash_syntax'
 
 RSpec.describe 'convert hash syntax spec' do
