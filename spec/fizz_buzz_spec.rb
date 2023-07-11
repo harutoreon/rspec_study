@@ -1,3 +1,4 @@
+require './spec/spec_helper'
 require './lib/fizz_buzz'
 
 RSpec.describe 'fizz buzz spec' do

@@ -1,3 +1,4 @@
+require './spec/spec_helper'
 require './lib/convert_length'
 
 RSpec.describe 'length convert spec' do

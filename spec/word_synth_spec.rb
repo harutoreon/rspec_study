@@ -1,3 +1,4 @@
+require './spec/spec_helper'
 require './lib/word_synth'
 require './lib/effects'
 

@@ -1,3 +1,4 @@
+require './spec/spec_helper'
 require './lib/effects'
 
 RSpec.describe 'effects spec' do
