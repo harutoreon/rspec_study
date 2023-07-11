@@ -8,11 +8,11 @@ RSpec.describe 'deep freezable spec' do
     end
 
     specify 'constants are always frozen' do
-      expect(Team::COUNTRIES.frozen?).to eq true
+      expect(Team::COUNTRIES).to be_frozen
     end
     
     specify 'each element of a constant is always frozen' do
-      expect(Team::COUNTRIES.all? { |country| country.frozen? }).to eq true
+      expect(Team::COUNTRIES.all? { |country| country.frozen? }).to be_truthy
     end
   end
 
@@ -26,13 +26,13 @@ RSpec.describe 'deep freezable spec' do
     end
 
     specify 'constants are always frozen' do
-      expect(Bank::CURRENCIES.frozen?).to eq true
+      expect(Bank::CURRENCIES).to be_frozen
     end
 
     specify 'each element of a constant is always frozen' do
       expect(Bank::CURRENCIES.all? { |key, value|
         key.frozen? && value.frozen?
-      }).to eq true  
+      }).to be_truthy
     end
   end
 end
